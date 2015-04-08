@@ -20,14 +20,28 @@ function trazarCnv(){
     // posición y tamaño del fondo
     cnv.drawImage(image, 0, 0, 744, 1039);            
     // tipo y tamaño letra
-    cnv.font = "bold 48px Impact";
+    cnv.font = "bold 58px Impact";
     // posición texto y centrar
     cnv.textAlign= "center";
     cnv.fillText(texto, 372, 80);
     // vamos con la condición
     var condicion = document.getElementById('condicion').value;
-    cnv.font = "italic 14px Impact";
-    cnv.fillText(condicion, 100, 150);
+    cnv.font = "italic 20px Impact";
+    cnv.textAlign= "left";
+/*    cnv.fillText(condicion, 50, 130);*/
+    var start = 0; // Carácter por el que empezar
+    var currentLine = 0; // Línea en la que nos encontramos.
+    var jumpAt = 60; // Número de caracteres por línea.
+    var lineHeight = 30; // Ancho de cada línea.
+    var str; // Auxiliar donde guardar el texto partido.
+ 
+    while (start < condicion.length)
+    {
+        str = condicion.substr(start,jumpAt);
+        start += jumpAt;
+ 
+        cnv.fillText(str, 50, 130+(lineHeight*currentLine++));
+    }
 
 /*    var x = 10;
     var y = 90;
