@@ -20,13 +20,13 @@ function trazarCnv(){
     // posición y tamaño del fondo
     cnv.drawImage(image, 0, 0, 744, 1039);            
     // tipo y tamaño letra
-    cnv.font = "bold 58px Impact";
+    cnv.font = "58px HEADOH";
     // posición texto y centrar
     cnv.textAlign= "center";
     cnv.fillText(texto, 372, 80);
     // vamos con la condición
     var condicion = document.getElementById('condicion').value;
-    cnv.font = "italic 20px Impact";
+    cnv.font = "italic 20px Ingleby";
     cnv.textAlign= "left";
 /*    cnv.fillText(condicion, 50, 130);*/
     var start = 0; // Carácter por el que empezar
@@ -41,6 +41,40 @@ function trazarCnv(){
         start += jumpAt;
  
         cnv.fillText(str, 50, 130+(lineHeight*currentLine++));
+    }
+    // vamos con la narración
+    var narracion = document.getElementById('narracion').value;
+    cnv.font = "20px Ingleby_regular";
+    cnv.textAlign= "left";
+    var start = 0; // Carácter por el que empezar
+    var jumpAt = 60; // Número de caracteres por línea.
+    var lineHeight = 30; // Ancho de cada línea.
+    var str; // Auxiliar donde guardar el texto partido.
+ 
+    while (start < narracion.length)
+    {
+        str = narracion.substr(start,jumpAt);
+        start += jumpAt;
+ 
+        cnv.fillText(str, 50, 130+(lineHeight*currentLine++));
+    }
+    // vamos con al opción 1
+    if (document.getElementById('option1').value == '1') {
+        var opt1 = document.getElementById('op1').value;
+        cnv.font = "45px HEADOH";
+        cnv.textAlign= "center";
+        var start = 0; // Carácter por el que empezar
+        var jumpAt = 60; // Número de caracteres por línea.
+        var lineHeight = 35; // Ancho de cada línea.
+        var str; // Auxiliar donde guardar el texto partido.
+ 
+        while (start < opt1.length)
+        {
+                str = opt1.substr(start,jumpAt);
+                start += jumpAt;
+ 
+                cnv.fillText(str, 372, 130+(lineHeight*currentLine++));
+        }
     }
 
 /*    var x = 10;
