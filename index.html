@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <title>Encrucijada</title>
+  <title>Editor cartas Encrucijada</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="style/main.css">
 </head>
@@ -15,19 +15,20 @@ Condición: <input type="text" value="Condición:" id="condicion" />
 <br />
 Narración: <input type="text" value="Narración" id="narracion" />
 <br />
-Opción 1: <select name="option_1" size="1" id="option1"><option value="1">Opción 1</option><option value="2">Nada</option></select>
+Opción 1: <select name="option_1" size="1" id="option1"><option value="0">Nada</option><option value="1">Opción 1</option><option value="2">Única opción</option></select>
 <br />
 Texto Opción 1: <input type="text" value="Primera opción" id="primera_opcion" />
 <br />
-Opción 2: <select name="option_2" size="1" id="option2"><option value="1">Opción 2</option><option value="2">Nada</option></select>
+Opción 2: <select name="option_2" size="1" id="option2"><option value="0">Nada</option><option value="1">Opción 2</option></select>
 <br />
 Texto Opción 1: <input type="text" value="Segunda opción" id="segunda_opcion" />
 <br />
-<input type="button" value="Editar" onclick="trazarCnv()" />
+<input type="button" value="Editar" onclick="creacnx()" />
 <br />
 <img id="fondo" src="style/img/carta_encrucijada.jpg" style="display:none;" />
 <img id="opcion1" src="style/img/opcion1.png" style="display:none;" />
 <img id="opcion2" src="style/img/opcion2.png" style="display:none;" />
+<img id="unica_op" src="style/img/unica_opcion.png" style="display:none;" />
 <input type="text" value="OPCION 1" id="op1" style="display:none;" />
 <br />
 <a id="captura">OBTENER CAPTURA</a>
