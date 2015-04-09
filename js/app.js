@@ -7,7 +7,7 @@ if (canvas.getContext) {
 
 function creacnx(){
         var image = document.getElementById('fondo'); // fondo
-        cnx.drawImage(image, 0, 0, 744, 1039);           
+        cnx.drawImage(image, 0, 0, 744, 1039);         
         var texto = document.getElementById('titulo').value; // título
         cnx.font = "48px HEADOH";
         cnx.textAlign= "center";
