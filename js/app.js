@@ -20,7 +20,7 @@ function trazarCnv(){
     // posición y tamaño del fondo
     cnv.drawImage(image, 0, 0, 744, 1039);            
     // tipo y tamaño letra
-    cnv.font = "58px HEADOH";
+    cnv.font = "48px HEADOH";
     // posición texto y centrar
     cnv.textAlign= "center";
     cnv.fillText(texto, 372, 80);
@@ -60,23 +60,50 @@ function trazarCnv(){
     }
     // vamos con al opción 1
     if (document.getElementById('option1').value == '1') {
-        var opt1 = document.getElementById('op1').value;
-        cnv.font = "45px HEADOH";
-        cnv.textAlign= "center";
-        var start = 0; // Carácter por el que empezar
-        var jumpAt = 60; // Número de caracteres por línea.
-        var lineHeight = 35; // Ancho de cada línea.
-        var str; // Auxiliar donde guardar el texto partido.
- 
-        while (start < opt1.length)
-        {
-                str = opt1.substr(start,jumpAt);
-                start += jumpAt;
- 
-                cnv.fillText(str, 372, 130+(lineHeight*currentLine++));
-        }
+       var opcion1 = document.getElementById('opcion1');
+       cnv.drawImage(opcion1, 35, 130+(lineHeight*currentLine++), 672, 41);
     }
-
+    // vamos con el texto de la opción 1
+    if (document.getElementById('option1').value == '1') {
+    var primera_opcion = document.getElementById('primera_opcion').value;
+    cnv.font = "20px Ingleby_regular";
+    cnv.textAlign= "left";
+    var start = 0; // Carácter por el que empezar
+    var jumpAt = 60; // Número de caracteres por línea.
+    var lineHeight = 30; // Ancho de cada línea.
+    var str; // Auxiliar donde guardar el texto partido.
+ 
+    while (start < primera_opcion.length)
+    {
+        str = primera_opcion.substr(start,jumpAt);
+        start += jumpAt;
+ 
+        cnv.fillText(str, 50, 180+(lineHeight*currentLine++));
+    }
+    }
+    // vamos con al opción 2
+    if (document.getElementById('option2').value == '1') {
+       var opcion2 = document.getElementById('opcion2');
+       cnv.drawImage(opcion2, 35, 180+(lineHeight*currentLine++), 672, 41);
+    }
+    // vamos con el texto de la opción 1
+    if (document.getElementById('option2').value == '1') {
+    var segunda_opcion = document.getElementById('segunda_opcion').value;
+    cnv.font = "20px Ingleby_regular";
+    cnv.textAlign= "left";
+    var start = 0; // Carácter por el que empezar
+    var jumpAt = 60; // Número de caracteres por línea.
+    var lineHeight = 30; // Ancho de cada línea.
+    var str; // Auxiliar donde guardar el texto partido.
+ 
+    while (start < segunda_opcion.length)
+    {
+        str = segunda_opcion.substr(start,jumpAt);
+        start += jumpAt;
+ 
+        cnv.fillText(str, 50, 225+(lineHeight*currentLine++));
+    }
+    }
 /*    var x = 10;
     var y = 90;
     var alto = 50;
@@ -97,5 +124,8 @@ function trazarCnv(){
 */
 }
 
-var img2 = canvas.toDataURL("image/png");
-document.write('<img class="captura" src="'+img2+'"/>');
+document.querySelector('#captura').onclick = function () {
+        var captura = document.getElementById('captura');
+        var img2 = canvas.toDataURL("image/png");
+        captura.innerHTML = '<img class="captura" src="'+img2+'"/>';
+}
