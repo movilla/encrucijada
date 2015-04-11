@@ -10,7 +10,7 @@ function creacnx(){
         var image = document.getElementById('fondo'); // fondo
         cnx.drawImage(image, 0, 0, 744, 1039);         
         var texto = document.getElementById('titulo').value; // título
-        cnx.font = "48px HEADOH";
+        cnx.font = "54px HEADOH";
         cnx.textAlign= "center";
         cnx.fillText(texto, 372, 80);
         var condicion = document.getElementById('condicion').value; // condición
