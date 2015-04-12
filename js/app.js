@@ -144,9 +144,23 @@ document.querySelector('#boton').onclick = function () {
 	                }
 	        }
 	};
-        var captura = document.getElementById('captur');
-        captura.style.visibility ='visible';
-	captura.style.animation = 'parriba 3s forwards';
+	var bedit = document.getElementById('bedit');
+        var sino = bedit.getAttribute('data-arriba');
+        var hide = document.getElementById('hide');
+        	if (sino == 'si' ) {
+			bedit.style.animation = 'girapabajo 1s forwards';
+			bedit.setAttribute('data-arriba', 'no')
+			canvas.style.animation = 'parriba 1s forwards';
+			hide.style.animation = 'parriba2 1s forwards';
+		}
+		else {
+			bedit.style.animation = 'giraparriba 1s forwards';
+			bedit.setAttribute('data-arriba', 'si')
+			canvas.style.animation = 'pabajo 1s forwards';
+			hide.style.animation = 'pabajo2 1s forwards';
+		}
+
+        	var resultado = document.getElementById('resultado');
         var img2 = canvas.toDataURL("image/png");
-        captura.innerHTML = '<img id="imagen" class="captura" src="'+img2+'"/>';
+//        resultado.innerHTML = '<img id="imagen" class="captura" src="'+img2+'"/>';
 };

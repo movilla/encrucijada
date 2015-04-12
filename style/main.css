@@ -20,12 +20,14 @@
   background: url('./icons/header-bg-long.jpg') #282323;
   padding-top: 3rem;
   box-shadow: 0 1px 2px #333;
+  z-index: 10;
 }
 
 .editar {
   position: absolute;
   right: 1.5%;
   top: 25%;
+  transform: rotate(0deg);
 }
 
 .edit {
@@ -33,11 +35,53 @@
 }
 
 #canvas {
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80%;
   max-height: 80%;
+  position: fixed;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.paracv {
+  position: fixed;
+  top: 150%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0.7;
+  background-color: #000;
+}
+
+@keyframes parriba {
+        0%	{top: 150%;}
+	100%    {top: 50%;}
+}
+
+@keyframes parriba2 {
+        0%	{top: 150%;}
+	100%    {top: 0%;}
+}
+
+@keyframes pabojo {
+        0%	{top: 50%;}
+	100%    {top: 150%;}
+}
+
+@keyframes pabajo2 {
+        0%	{top: 0%;}
+	100%    {top: 150%;}
+}
+
+@keyframes girapabajo {
+        0%	{transform: rotate(0deg);}
+	100%    {transform: rotate(180deg);}
+}
+
+@keyframes giraparriba {
+        0%	{transform: rotate(180deg);}
+	100%    {transform: rotate(0deg);}
 }
 
 .losinput {
@@ -88,7 +132,7 @@ select {
   margin-top: 1rem;
 }
 
-.captura {
+/*.captura {
   max-height: 95%;
   position: fixed;
   left: 50%;
@@ -101,7 +145,4 @@ select {
   position: absolute;
 }
 
-@keyframes parriba {
-        0%	{top: 150%;}
-	100%    {top: 50%;}
-}
+*/
