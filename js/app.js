@@ -148,19 +148,22 @@ document.querySelector('#boton').onclick = function () {
         var sino = bedit.getAttribute('data-arriba');
         var hide = document.getElementById('hide');
         	if (sino == 'si' ) {
-			bedit.style.animation = 'girapabajo 1s forwards';
+			bedit.style.animation = 'girapabajo 2s forwards';
 			bedit.setAttribute('data-arriba', 'no')
-			canvas.style.animation = 'parriba 1s forwards';
-			hide.style.animation = 'parriba2 1s forwards';
+			canvas.style.animation = 'parriba 2s forwards';
+			hide.style.animation = 'parriba2 2s forwards';
+        	        var nav = document.getElementById('nav');
+        	        var imagen = canvas.toDataURL('image/jpeg', 0.8);
+		        nav.innerHTML = '<a class="descarga" id="bdescarga" data-mostrar="si" href="'+imagen+'" download="carta_encrucijada.jpeg"><input class="desc" id="botondex" type="button" value="Descargar"/></a>';
+			var bdescarga = document.getElementById('bdescarga');
+			bdescarga.style.animation = 'mostar 2s forwards';
 		}
 		else {
 			bedit.style.animation = 'giraparriba 1s forwards';
 			bedit.setAttribute('data-arriba', 'si')
 			canvas.style.animation = 'pabajo 1s forwards';
 			hide.style.animation = 'pabajo2 1s forwards';
+			var bdescarga = document.getElementById('bdescarga')
+			bdescarga.style.animation = 'nomostar 1s forwards';
 		}
-
-        	var resultado = document.getElementById('resultado');
-        var img2 = canvas.toDataURL("image/png");
-//        resultado.innerHTML = '<img id="imagen" class="captura" src="'+img2+'"/>';
 };
