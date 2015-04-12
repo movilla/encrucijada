@@ -7,6 +7,15 @@
   <link rel="stylesheet" type="text/css" href="style/main.css">
 </head>
 <body>
+  <section>
+    <header>
+      <nav class="barra">
+        <a class="editar">
+          <input class="edit" id="boton" type="button" value="Editar"/>
+        </a>
+      </nav>
+    </header>
+  </section>
   <section id="hide">
     <canvas id="canvas" width="744" height="1039"></canvas>
   </section>
@@ -60,7 +69,6 @@
       <input class="narop3" type="text" placeholder="Narración de la opción anterior" id="tercera_opcion" />
     </article>
   </section>
-<input type="button" value="Editar" onclick="creacnx()" />
 <br />
 <img id="fondo" src="style/img/carta_encrucijada.jpg" style="display:none;" />
 <img id="opcion1" src="style/img/opcion1.png" style="display:none;" />
@@ -71,7 +79,11 @@
 <img id="op2pabajo" src="style/img/op2pabajo.png" style="display:none;" />
 <img id="alterna" src="style/img/alternativa.png" style="display:none;" />
 <br />
-<a id="captura">OBTENER CAPTURA</a>
+  <section id="resultado">
+    <a id="captur">
+      <img id="imagen" class="captura" src=""/>
+    </a>
+  </section>
 <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
