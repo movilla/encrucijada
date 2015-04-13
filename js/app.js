@@ -149,7 +149,8 @@ document.querySelector('#boton').onclick = function () {
         var hide = document.getElementById('hide');
         	if (sino == 'si' ) {
 			bedit.style.animation = 'girapabajo 2s forwards';
-			bedit.setAttribute('data-arriba', 'no')
+			bedit.setAttribute('data-arriba', 'no');
+			canvas.style.zIndex = '5';
 			canvas.style.animation = 'parriba 2s forwards';
 			hide.style.animation = 'parriba2 2s forwards';
         	        var nav = document.getElementById('nav');
@@ -160,7 +161,7 @@ document.querySelector('#boton').onclick = function () {
 		}
 		else {
 			bedit.style.animation = 'giraparriba 1s forwards';
-			bedit.setAttribute('data-arriba', 'si')
+			bedit.setAttribute('data-arriba', 'si');
 			canvas.style.animation = 'pabajo 1s forwards';
 			hide.style.animation = 'pabajo2 1s forwards';
 			var bdescarga = document.getElementById('bdescarga')
