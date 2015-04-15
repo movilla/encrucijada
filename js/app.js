@@ -10,12 +10,12 @@ document.querySelector('#boton').onclick = function () {
         	var image = document.getElementById('fondo'); // fondo
         	cnx.drawImage(image, 0, 0, 744, 1039);         
         	var texto = document.getElementById('titulo').value; // título
-        	cnx.font = "54px HEADOH";
+        	cnx.font = '54px HEADOH';
         	cnx.textAlign= "center";
         	cnx.fillText(texto, 372, 80);
         	var condicion = document.getElementById('condicion').value; // condición
-        	cnx.font = "italic 22px Ingleby";
-        	cnx.textAlign= "left";
+        	cnx.font = 'italic 22px Ingleby';
+        	cnx.textAlign= 'left';
 	        var start = 0;
 	        var currentLine = 0;
 	        var jumpAt = 60;
@@ -27,8 +27,8 @@ document.querySelector('#boton').onclick = function () {
 	                cnx.fillText(str, 50, 130+(lineHeight*currentLine++));
 	        }
 	        var narracion = document.getElementById('narracion').value;  // narración
-	        cnx.font = "22px Ingleby";
-	        cnx.textAlign= "left";
+	        cnx.font = '22px Ingleby';
+	        cnx.textAlign= 'left';
 	        var start = 0;
         	var jumpAt = 60;
 	        var lineHeight = 30;
