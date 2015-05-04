@@ -153,9 +153,11 @@ document.querySelector('#boton').onclick = function () {
 			canvas.style.zIndex = '5';
 			canvas.style.animation = 'parriba 2s forwards';
 			hide.style.animation = 'parriba2 2s forwards';
+                        var texto = document.getElementById('titulo').value;
+                        if (!texto) { texto = 'carta_encrucijada' }
         	        var nav = document.getElementById('nav');
         	        var imagen = canvas.toDataURL('image/jpeg', 0.8);
-		        nav.innerHTML = '<a class="descarga" id="bdescarga" data-mostrar="si" href="'+imagen+'" download="carta_encrucijada.jpeg"><input class="desc" id="botondex" type="button" value="Descargar"/></a>';
+		        nav.innerHTML = '<a class="descarga" id="bdescarga" data-mostrar="si" href="'+imagen+'" download="'+texto+'.jpeg"><input class="desc" id="botondex" type="button" value="Descargar"/></a>';
 			var bdescarga = document.getElementById('bdescarga');
 			bdescarga.style.animation = 'mostar 2s forwards';
 		}
