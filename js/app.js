@@ -1,4 +1,12 @@
 document.querySelector('#boton').onclick = function () {
+        if (document.getElementById('option4').value == '1') {
+                document.getElementById('palcanvas');
+                palcanvas.innerHTML = '<canvas id="canvas" width="744" height="2118"></canvas>';
+        }
+        if (document.getElementById('option4').value == '0') {
+                document.getElementById('palcanvas');
+                palcanvas.innerHTML = '<canvas id="canvas" width="744" height="1039"></canvas>';
+        }
 	var canvas = document.getElementById('canvas');
 	var cnx = null;
 	if (canvas.getContext) {
@@ -7,8 +15,14 @@ document.querySelector('#boton').onclick = function () {
 	}
         	function creacnx () {
         	cnx.clearRect(0,0,canvas.width,canvas.height); // limpiando
-        	var image = document.getElementById('fondo'); // fondo
-        	cnx.drawImage(image, 0, 0, 744, 1039);         
+                if (document.getElementById('option4').value == '1') {
+               	        var image = document.getElementById('compt'); // fondo completo
+        	        cnx.drawImage(image, 0, 0, 744, 2118);
+                }
+                if (document.getElementById('option4').value == '0') {
+        	        var image = document.getElementById('fondo'); // fondo
+        	        cnx.drawImage(image, 0, 0, 744, 1039);
+                }         
         	var texto = document.getElementById('titulo').value; // título
         	cnx.font = '54px HEADOH';
         	cnx.textAlign= "center";
